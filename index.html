@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aakib Patel | AI &amp; IoT Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=Geist:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#6800b4",
+            "outline": "#918fa1",
+            "primary": "#c3c0ff",
+            "inverse-surface": "#dae2fd",
+            "secondary": "#ddb8ff",
+            "on-secondary": "#490080",
+            "tertiary": "#4cd7f6",
+            "on-primary-container": "#dad7ff",
+            "on-error": "#690005",
+            "secondary-fixed-dim": "#ddb8ff",
+            "inverse-primary": "#4d44e3",
+            "inverse-on-surface": "#283044",
+            "secondary-container": "#7c03d3",
+            "on-secondary-container": "#dfbcff",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-primary-fixed": "#0f0069",
+            "error-container": "#93000a",
+            "on-surface": "#dae2fd",
+            "surface-bright": "#31394d",
+            "on-error-container": "#ffdad6",
+            "error": "#ffb4ab",
+            "on-tertiary-container": "#93e8ff",
+            "surface-tint": "#c3c0ff",
+            "surface-container": "#171f33",
+            "surface-container-lowest": "#060e20",
+            "on-primary-fixed-variant": "#3323cc",
+            "tertiary-fixed": "#acedff",
+            "on-secondary-fixed": "#2c0051",
+            "background": "#0b1326",
+            "on-tertiary-fixed-variant": "#004e5c",
+            "surface-container-low": "#131b2e",
+            "tertiary-container": "#006a7c",
+            "surface": "#0b1326",
+            "surface-container-high": "#222a3d",
+            "on-tertiary": "#003640",
+            "tertiary-fixed-dim": "#4cd7f6",
+            "secondary-fixed": "#f0dbff",
+            "on-tertiary-fixed": "#001f26",
+            "surface-variant": "#2d3449",
+            "surface-dim": "#0b1326",
+            "on-background": "#dae2fd",
+            "outline-variant": "#464555",
+            "primary-container": "#4f46e5",
+            "primary-fixed": "#e2dfff",
+            "surface-container-highest": "#2d3449",
+            "on-surface-variant": "#c7c4d8",
+            "on-primary": "#1d00a5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "4rem",
+            "margin-mobile": "1rem",
+            "container-max": "1280px",
+            "component-gap": "1rem",
+            "section-gap": "8rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-md": ["Geist"],
+            "headline-lg": ["Hanken Grotesk"],
+            "headline-xl": ["Hanken Grotesk"],
+            "body-md": ["Inter"],
+            "headline-md": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Hanken Grotesk"],
+            "label-sm": ["Geist"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0b1326;
+      color: #dae2fd;
+      overflow-x: hidden;
+    }
+
+    .glass-card {
+      background: rgba(23, 31, 51, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(195, 192, 255, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .glow-effect {
+      position: relative;
+    }
+
+    .glow-effect::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .active-nav {
+      color: #c3c0ff;
+      font-weight: 700;
+      border-bottom: 2px solid #c3c0ff;
+      padding-bottom: 4px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0b1326;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #171f33;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2d3449;
+    }
+
+    /* ---------- Responsive, color-changing buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    .btn:active {
+      transform: scale(0.96);
+    }
+    .btn:focus-visible {
+      outline: 2px solid #c3c0ff;
+      outline-offset: 2px;
+    }
+
+    /* Solid / filled button */
+    .btn-solid {
+      background-color: #4f46e5;
+      color: #ffffff;
+    }
+    .btn-solid:hover {
+      background-color: #7c03d3;
+      box-shadow: 0 0 18px rgba(124, 3, 211, 0.35);
+    }
+
+    /* Outline button that fills with color on hover */
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #464555;
+      color: #dae2fd;
+    }
+    .btn-outline:hover {
+      background-color: #c3c0ff;
+      border-color: #c3c0ff;
+      color: #1d00a5;
+      box-shadow: 0 0 18px rgba(195, 192, 255, 0.3);
+    }
+
+    /* Icon / round buttons */
+    .btn-icon {
+      background-color: transparent;
+      color: #c7c4d8;
+    }
+    .btn-icon:hover {
+      background-color: #2d3449;
+      color: #c3c0ff;
+    }
+
+    /* Floating scroll-to-top button */
+    .btn-fab {
+      background-color: #4f46e5;
+      color: #ffffff;
+    }
+    .btn-fab:hover {
+      background-color: #7c03d3;
+      transform: scale(1.1);
+    }
+    .btn-fab:active {
+      transform: scale(0.92);
+    }
+
+    /* Fully responsive sizing: stack full-width on phones, auto width from small breakpoint up */
+    .btn-responsive {
+      width: 100%;
+    }
+    @media (min-width: 480px) {
+      .btn-responsive {
+        width: auto;
+      }
+    }
+
+    /* Mobile nav menu */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+    .mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+    #menu-icon {
+      transition: transform 0.3s ease;
+    }
+    #menu-toggle-btn[aria-expanded="true"] #menu-icon {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="text-headline-md font-bold text-white">AP</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-on-surface">Aakib Patel</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md transition-colors duration-300" href="#home">Home</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-300" href="#skills">Skills</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-300" href="#projects">Projects</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-300" href="#achievements">Achievements</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4">
+<button class="btn btn-icon p-2 rounded-full" aria-label="Toggle dark mode">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button id="menu-toggle-btn" class="btn btn-icon p-2 rounded-full md:hidden" aria-label="Toggle menu" aria-expanded="false">
+<span class="material-symbols-outlined" id="menu-icon" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile dropdown menu: appears under the header on small screens -->
+<div id="mobile-menu" class="mobile-menu md:hidden px-margin-mobile">
+<div class="flex flex-col gap-1 pb-4 pt-2 border-t border-outline-variant/20">
+<a class="mobile-nav-link px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors duration-300 font-label-md" href="#home">Home</a>
+<a class="mobile-nav-link px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors duration-300 font-label-md" href="#about">About</a>
+<a class="mobile-nav-link px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors duration-300 font-label-md" href="#skills">Skills</a>
+<a class="mobile-nav-link px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors duration-300 font-label-md" href="#projects">Projects</a>
+<a class="mobile-nav-link px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors duration-300 font-label-md" href="#achievements">Achievements</a>
+<a class="mobile-nav-link px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors duration-300 font-label-md" href="#contact">Contact</a>
+</div>
+</div>
+</header>
+<main class="pt-24 space-y-section-gap pb-20">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative overflow-visible" id="home"><div class="absolute inset-0 -z-10 overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc8g33QIwWMkJIANTQMZsNzxcrvyLvFXgdaxjF3ZmzsjDspcqJG_KEvLYjas1Nq6q31qHAbSL8ayZFeDG2BTR-yhrscJYqOn6seQfhLI5AOcP9oTz5XALKfbypmS6OkjKw5X17vg3ejM1IRrUaM1mWNayoO9AUahCylkd_ICPqzSlBZe3ekBQ4cb0fNV0pR_SKqIGesEgS1YEzWd5u7IbG7MmYMvq3udy5W5LCkPXfn3AhZndgfbEK3lMk0wJvIlhBH0r68OwowU0" alt="" class="w-full h-full object-cover opacity-40"><div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div></div>
+
+<div class="grid md:grid-cols-2 items-center gap-12 py-12 md:py-20">
+<div class="space-y-8 order-2 md:order-1">
+<div class="space-y-4">
+<h3 class="text-headline-md font-headline-md text-primary">Hello, I'm</h3>
+<h1 class="text-headline-xl md:text-headline-xl font-headline-xl text-on-surface">
+              Aakib <span class="text-primary-container">Patel</span>
+</h1>
+<p class="text-body-lg font-body-lg text-secondary-fixed-dim">
+              BCA Student&nbsp;</p>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-lg leading-relaxed">
+              Passionate about building intelligent systems, AI solutions, and real-time IoT applications that solve real-world problems. Turning ideas into impactful digital solutions.
+            </p>
+</div>
+<div class="flex flex-wrap gap-4">
+
+<button class="btn btn-outline btn-responsive px-8 py-3 rounded-xl font-bold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Contact Me
+            </button>
+</div>
+<div class="flex items-center gap-6 pt-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-all duration-300" href="https://www.linkedin.com/in/aakib-patel-839002418?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-all duration-300" href="https://github.com/aakibpatel1112-stack" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-all duration-300" href="mailto:aakibpatel1112@gmail.com" aria-label="Email">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-all duration-300" href="tel:+919075801112" aria-label="Call">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</a>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center">
+<div class="relative">
+<!-- Glow background -->
+<div class="absolute inset-0 bg-primary-container opacity-20 blur-3xl rounded-full scale-110"></div>
+<!-- Portrait Container -->
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary/30 p-2 overflow-hidden relative z-10">
+<img class="w-full h-full object-cover rounded-full" alt="Portrait of Aakib Patel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb9Tm1xad12rR4mNpAGbwpKkJTp3Xdvb5i2nERvziS4LtH-BcqDgRfnPF1ejS1af2PpuocYkAwTTIOvyQ5C20v9GTMyG6BVwBndgleISS_COp09T7YOb6zwPHpryGY0tqPFIeFj6hKUlf27ge9pNIrzfjBb9coggkoS24D0obfCPX8lZhMCYqhtAyZB8xWJhHgE9C1MdFTuHc48k3z0h4DB9lROGHnZbT-PA47yrYo7j8tfvpy52o-Zya2dSv9hO5hZgbfC7wMB3QBcQ">
+</div>
+<!-- Decorative Orbit -->
+<div class="absolute -inset-4 border border-dashed border-primary/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" id="about">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="person">person</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">About Me</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="md:col-span-2 glass-card p-8 rounded-2xl space-y-6">
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+            I am a passionate BCA student focused on Artificial Intelligence, Internet of Things (IoT), and Full Stack Web Development. I enjoy building real-world solutions that solve practical problems. My goal is to create intelligent software products with modern technologies while continuously improving my skills.
+          </p>
+<button class="btn btn-solid btn-responsive px-6 py-2 rounded-lg font-bold">
+            Know More About Me
+          </button>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="glass-card p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<div>
+<h4 class="font-bold text-on-surface">Location</h4>
+<p class="text-sm text-on-surface-variant">Pune, Maharashtra, India</p>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="phone">phone</span>
+<div>
+<h4 class="font-bold text-on-surface">Phone</h4>
+<p class="text-sm text-on-surface-variant">+91 9075801112</p>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+<div>
+<h4 class="font-bold text-on-surface">Education</h4>
+<p class="text-sm text-on-surface-variant">BCA Student, SPPU University</p>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<div>
+<h4 class="font-bold text-on-surface">Email</h4>
+<p class="text-sm text-on-surface-variant">aakibpatel1112@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" id="skills">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">My Skills</h2>
+<div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
+<!-- Skill Card Template -->
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
+<div class="w-12 h-12 mb-4 text-[#E34F26] group-hover:scale-110 transition-transform">
+<svg class="w-full h-full fill-current" viewBox="0 0 24 24" style="width: 95%; box-shadow: rgba(227, 79, 38, 0.2) 0px 0px 8px;"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path></svg>
+</div>
+<span class="text-sm font-bold text-on-surface mb-3">HTML5</span>
+<div class="w-full h-1 bg-surface-variant/30 rounded-full overflow-hidden"><div class="h-full bg-[#E34F26]" style="width: 95%; box-shadow: rgba(227, 79, 38, 0.2) 0px 0px 8px;"></div></div>
+<span class="text-[10px] text-on-surface-variant mt-1">95%</span>
+</div>
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
+<div class="w-12 h-12 mb-4 text-[#1572B6] group-hover:scale-110 transition-transform">
+<svg class="w-full h-full fill-current" viewBox="0 0 24 24" style="width: 90%; box-shadow: rgba(21, 114, 182, 0.2) 0px 0px 8px;"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path></svg>
+</div>
+<span class="text-sm font-bold text-on-surface mb-3">CSS3</span>
+<div class="w-full h-1 bg-surface-variant/30 rounded-full overflow-hidden"><div class="h-full bg-[#1572B6]" style="width: 90%; box-shadow: rgba(21, 114, 182, 0.2) 0px 0px 8px;"></div></div>
+<span class="text-[10px] text-on-surface-variant mt-1">50%</span>
+</div>
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
+<div class="w-12 h-12 mb-4 text-[#F7DF1E] group-hover:scale-110 transition-transform">
+<svg class="w-full h-full fill-current" viewBox="0 0 24 24" style="width: 85%; box-shadow: rgba(247, 223, 30, 0.2) 0px 0px 8px;"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.045-.705.15-.405.645-.585 1.126-.585.525-.046 1.05.195 1.275.57.195.315.21.69.21 1.17h3.12c-.015-2.145-1.155-3.33-3.03-3.93-1.095-.345-2.43-.33-3.405.105-1.44.6-2.04 1.515-1.92 3.105.105 1.35.915 2.1 2.22 2.76 1.155.51 2.28.84 2.43 1.575.18.585-.105 1.11-.84 1.275-.36.075-1.02.045-1.455-.45-.42-.51-.435-1.185-.435-1.89h-3.21c.015 2.43 1.32 3.825 3.39 4.26 1.335.285 3.255.06 4.305-.915 1.11-.99 1.11-2.4 1.005-3.21zM9.51 11.235c-.15-.825-.66-1.305-1.455-1.455-.66-.12-1.395.045-1.635.63-.165.405-.09 1.05.045 1.485.405 1.11 3.24 1.185 3.24 4.17 0 2.46-1.845 3.93-4.245 3.93-1.89 0-3.375-.81-3.975-2.58h3.195c.15.54.39.81.99.93.45.06 1.11-.12 1.23-.78.195-.72-.45-.96-1.53-1.425-1.395-.585-2.61-1.305-2.52-3.15.03-1.68 1.125-2.775 2.73-3.12 1.245-.255 2.61.12 3.24 1.575l-3.075 1.59z"></path></svg>
+</div>
+<span class="text-sm font-bold text-on-surface mb-3">JS</span>
+<div class="w-full h-1 bg-surface-variant/30 rounded-full overflow-hidden"><div class="h-full bg-[#F7DF1E]" style="width: 85%; box-shadow: rgba(247, 223, 30, 0.2) 0px 0px 8px;"></div></div>
+<span class="text-[10px] text-on-surface-variant mt-1">60%</span>
+</div>
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group"><div class="w-12 h-12 mb-6 text-[#61DAFB] group-hover:scale-110 transition-transform"><svg class="w-full h-full fill-current" viewBox="0 0 24 24" style="width: 80%; box-shadow: rgba(97, 218, 251, 0.2) 0px 0px 8px;"><path d="M24 11.026c0 1.956-1.605 3.86-4.264 5.342-1.042.582-2.26.963-3.524 1.17l.951 1.637a.97.97 0 0 1-.353 1.332.969.969 0 0 1-1.331-.354l-1.03-1.776c-.477.03-.961.044-1.449.044s-.972-.014-1.449-.044l-1.03 1.776a.969.969 0 0 1-1.331.354.97.97 0 0 1-.353-1.332l.951-1.637c1.264-.207 2.482-.588 3.524-1.17 2.659-1.482 4.264-3.386 4.264-5.342 0-1.956-1.605-3.86-4.264-5.342-1.042-.582-2.26-.963-3.524-1.17l.951-1.637a.97.97 0 0 0-.353-1.332.969.969 0 0 0-1.331.354l-1.03 1.776c-.477-.03-.961-.044-1.449-.044s-.972.014-1.449.044l-1.03-1.776a.969.969 0 0 0-1.331-.354.97.97 0 0 0-.353 1.332l.951 1.637c-1.264.207-2.482.588-3.524 1.17-2.659 1.482-4.264 3.386-4.264 5.342z"></path></svg></div><span class="text-sm font-bold text-on-surface mb-4">React</span><div class="w-full h-1 bg-surface-variant/30 rounded-full overflow-hidden"><div class="h-full bg-[#61DAFB]" style="width: 80%; box-shadow: rgba(97, 218, 251, 0.2) 0px 0px 8px;"></div></div><span class="text-[10px] text-on-surface-variant mt-2">80%</span></div>
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group"><div class="w-12 h-12 mb-4 text-[#00979D] group-hover:scale-110 transition-transform"><svg class="w-full h-full fill-current" viewBox="0 0 24 24" style="width: 80%; box-shadow: rgba(0, 151, 157, 0.2) 0px 0px 8px;"><path d="M0 10.158v3.684l2.585 2.585h3.684L12 21.758l5.731-5.331h3.684l2.585-2.585v-3.684L21.415 7.573h-3.684L12 2.242 6.269 7.573H2.585L0 10.158zm12-4.158l4.158 4.158-4.158 4.158-4.158-4.158L12 6zm0 10.158c2.296 0 4.158-1.862 4.158-4.158S14.296 7.842 12 7.842 7.842 9.704 7.842 12 9.704 16.158 12 16.158z"></path></svg></div><span class="text-sm font-bold text-on-surface mb-3">Arduino</span><div class="w-full h-1 bg-surface-variant/30 rounded-full overflow-hidden"><div class="h-full bg-[#00979D]" style="width: 80%; box-shadow: rgba(0, 151, 157, 0.2) 0px 0px 8px;"></div></div><span class="text-[10px] text-on-surface-variant mt-1">80%</span></div>
+</div>
+</section>
+<!-- Featured Projects Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" id="projects">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Featured Projects</h2>
+<div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="glass-card rounded-2xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Soil Pulse smart agriculture project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPGGAmgx8AG4_N64iUplRjTTtAcF3wQY_OO_QFwwDOgHVCXm7l4sEdHZJEcbtN15MeW0ojRU4nBf-mE37kY9JnX1o8Fo_LMmS2tWd-_iQJaoViGAJERuFKyZfZ1IE1ZR7of7i9jW4X2sccHQix205PAdmyPJY0fEMtzK4GOpAiR50baiOglDH6ehRuDuFSiJ0bvRu9bcRXSB2JRdy3tknaCWAGW1je02bzbAGg2nRSXemcF481LGaN5O7hdEp54ROjF1KlStlzz6c">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="potted_plant">potted_plant</span>
+<h3 class="text-headline-md font-bold text-on-surface">Soil Pulse</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Smart Agriculture Monitoring System using IoT sensors, AI analytics, FastAPI, React and MySQL.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">IoT</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">AI</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">FastAPI</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">React</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glass-card rounded-2xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Plant disease detection project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy1ZC814H0f8SPRBEpCU6U3oDkCgZkgXBCHdXTCc40ohBZSXQBrp_AWCSYuZoB-J6CGiMgzfWr6WFoThz_K_Wft9HhXtl5rHDzIMYh-nDK38rqBs6dvxepdsLgHtunmHC1wrHIUF41-b-lDvthNxG65vi-7Z3eB_ML8iqL6zBNUvL-AIWdLg4MD0cF3lCaXXRrENCpI99k73zi3b51t7UeG88LU12tYv2IForeZ0M1iyl6fUhIa9ls8DUQLcs3SzAfuD9Ryg3mAxo">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="bug_report">bug_report</span>
+<h3 class="text-headline-md font-bold text-on-surface">Plant Disease Detection</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Deep Learning based system to detect plant diseases and provide treatment suggestions to improve crop yield.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">AI</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">TensorFlow</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">Python</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">OpenCV</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="glass-card rounded-2xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="EMG communication project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF8OKT1IrmKwtwlNJusnbhokEUFEAOojXvo0bwwqFRk8S2RyKkUgnaD0kL8CxzI4PmyQcrcxNiOqT7AXGQYkTxX31zUsohDFSkxLraIwtrkiwa7IWoL8Ms9f88zLEVHRWIMp8x8MZBwIh75Vdy7yzwrZYyrkx5gGxBDoPA-6NHhJJ6idTP6Up5c_35yuo29AvjM9pvf0UzUX3FXuvQQaNSeLu5stw2ZNR2JEz_G40caMpZEDuCL-pcTSbu08_T9Va-eq4kCSrM-wM">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="neurology">neurology</span>
+<h3 class="text-headline-md font-bold text-on-surface">EMG Communication</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Assistive communication system using EMG sensors, Arduino Nano, AI model and FastAPI backend.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">IoT</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">AI</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">Arduino</span>
+<span class="px-3 py-1 bg-surface-container-high text-[10px] font-bold text-primary rounded-full">FastAPI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" id="achievements">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Achievements</h2>
+<div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Achievement 1 -->
+<div class="glass-card rounded-2xl overflow-hidden group">
+<div class="h-56 sm:h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Receiving award and certificate on stage" src="images/achievement-1.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="p-6 space-y-2">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<h3 class="text-headline-md font-bold text-on-surface">Award Recognition</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Honored with a trophy and certificate for outstanding project presentation.</p>
+</div>
+</div>
+<!-- Achievement 2 -->
+<div class="glass-card rounded-2xl overflow-hidden group">
+<div class="h-56 sm:h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Group photo with team holding trophies and certificates" src="images/achievement-2.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="p-6 space-y-2">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="trophy">emoji_events</span>
+<h3 class="text-headline-md font-bold text-on-surface">Team Achievement</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Celebrating a winning project with the team, faculty, and mentors.</p>
+</div>
+</div>
+<!-- Achievement 3 -->
+<div class="glass-card rounded-2xl overflow-hidden group">
+<div class="h-56 sm:h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Presenting project on disaster management robotics" src="images/achievement-3.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div class="p-6 space-y-2">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+<h3 class="text-headline-md font-bold text-on-surface">Project Presentation</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Presenting an IoT-based disaster management robotics project to evaluators.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center gap-2">
+<div class="w-14 h-14 bg-primary-container/20 text-primary rounded-xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-3xl" data-icon="military_tech">military_tech</span>
+</div>
+<span class="text-3xl font-bold text-on-surface">+3</span>
+<span class="text-sm text-on-surface-variant">Projects Completed</span>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center gap-2">
+<div class="w-14 h-14 bg-secondary-container/20 text-secondary rounded-xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-3xl" data-icon="terminal">terminal</span>
+</div>
+<span class="text-3xl font-bold text-on-surface">2000+</span>
+<span class="text-sm text-on-surface-variant">Lines of Code</span>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center gap-2">
+<div class="w-14 h-14 bg-tertiary-container/20 text-tertiary rounded-xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-3xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<span class="text-3xl font-bold text-on-surface">5+</span>
+<span class="text-sm text-on-surface-variant">Technologies</span>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center gap-2">
+<div class="w-14 h-14 bg-error-container/20 text-error rounded-xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="text-3xl font-bold text-on-surface">Always</span>
+<span class="text-sm text-on-surface-variant">Learning New Things</span>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" id="contact">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Get In Touch</h2>
+<div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-5 gap-12">
+<div class="md:col-span-2 space-y-8">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<p class="text-on-surface-variant">Sai Vaibhav Society, Pune, Maharashtra, India</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="tel:+919075801112">+91 9075801112</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 break-all" href="mailto:aakibpatel1112@gmail.com">aakibpatel1112@gmail.com</a>
+</div>
+</div>
+<div class="relative w-full h-48 rounded-2xl overflow-hidden grayscale">
+
+</div>
+</div>
+<div class="md:col-span-3 glass-card p-8 rounded-2xl">
+<form class="space-y-4">
+<div class="grid md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant ml-1">Your Name</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors p-3 rounded-lg text-on-surface placeholder:text-outline-variant" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant ml-1">Your Email</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors p-3 rounded-lg text-on-surface placeholder:text-outline-variant" placeholder="john@example.com" type="email">
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant ml-1">Subject</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors p-3 rounded-lg text-on-surface placeholder:text-outline-variant" placeholder="Project Inquiry" type="text">
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant ml-1">Your Message</label>
+<textarea class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors p-3 rounded-lg text-on-surface placeholder:text-outline-variant" placeholder="Write your message here..." rows="4"></textarea>
+</div>
+<button class="btn btn-solid w-full py-4 rounded-xl font-bold shadow-lg shadow-primary-container/20" type="submit">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+              Send Message
+            </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col items-center justify-center space-y-6">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="text-xl font-bold text-primary">AP</span>
+</div>
+<div class="flex flex-wrap justify-center gap-4 sm:gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm uppercase tracking-widest" href="https://www.linkedin.com/in/aakib-patel-839002418?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm uppercase tracking-widest" href="https://github.com/aakibpatel1112-stack" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm uppercase tracking-widest" href="mailto:aakibpatel1112@gmail.com">Mail</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm uppercase tracking-widest" href="tel:+919075801112">Call</a>
+</div>
+<p class="text-on-surface-variant text-label-sm">© 2025 Aakib Patel. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<button id="scroll-top-btn" class="btn btn-fab fixed bottom-6 right-4 sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-lg z-40" aria-label="Scroll to top">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+<script>
+    // Smooth scrolling for navigation links (desktop + mobile)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Close the mobile menu after tapping a link
+        closeMobileMenu();
+      });
+    });
+
+    // Active navigation state on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('header nav div a');
+
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+        link.classList.add('text-on-surface-variant');
+        if (current && link.getAttribute('href').includes(current)) {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+        }
+      });
+    });
+
+    // Simple scroll to top
+    document.getElementById('scroll-top-btn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Responsive hamburger menu toggle
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      menuToggleBtn.setAttribute('aria-expanded', 'true');
+      menuIcon.textContent = 'close';
+      menuIcon.setAttribute('data-icon', 'close');
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      menuToggleBtn.setAttribute('aria-expanded', 'false');
+      menuIcon.textContent = 'menu';
+      menuIcon.setAttribute('data-icon', 'menu');
+    }
+
+    menuToggleBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('open');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+
+    // Close mobile menu automatically when resizing up to desktop width
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMobileMenu();
+      }
+    });
+  </script>
+</body>
+</html>
