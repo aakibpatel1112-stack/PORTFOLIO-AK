@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Aakib Patel</title>
+  <meta name="description" content="Portfolio of Aakib Patel — Python full-stack developer building complete web products." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23c1272d'/><text x='32' y='44' font-family='Arial Black' font-size='32' fill='%23ead9bd' text-anchor='middle'>A</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+<div class="poster">
+
+<!-- ======================= TOP BAR ======================= -->
+  <div class="topbar">
+    <span>Creative Portfolio</span>
+    <span class="status"><i class="dot"></i>Available for internship</span>
+  </div>
+
+  
+  <!-- ======================= NAV ======================= -->
+  <header class="site-head">
+    <a class="logo" href="index.html">Aakib<span>.</span></a>
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn-red btn-small-red" href="contact.html">Hire Me</a>
+  </header>
+
+  <main>
+<!-- ======================= PAGE HERO ======================= -->
+  <section class="page-hero">
+    <h1 class="mega">About</h1>
+    <p class="sub">The human behind the code</p>
+  </section>
+<!-- ======================= ABOUT + TOOLS ======================= -->
+  <section class="band duo about-band">
+    <svg class="globe-bg" viewBox="0 0 200 200" aria-hidden="true">
+      <g fill="none" stroke="#c1272d" stroke-width="0.7">
+        <circle cx="100" cy="100" r="88"/>
+        <ellipse cx="100" cy="100" rx="88" ry="34"/>
+        <ellipse cx="100" cy="100" rx="88" ry="66"/>
+        <ellipse cx="100" cy="100" rx="34" ry="88"/>
+        <ellipse cx="100" cy="100" rx="66" ry="88"/>
+        <line x1="12" y1="100" x2="188" y2="100"/>
+      </g>
+    </svg>
+
+    <div class="about">
+      <h2 class="label">About Me</h2>
+      <div class="about-inner">
+        <img class="about-photo" src="images/portrait-about.jpg" alt="Aakib Patel" />
+        <div>
+          <p class="about-text">
+            I'm a <strong>BSc Computer Application student</strong> and Python
+            full-stack developer with a passion for clean backends and
+            minimal, modern interfaces.
+          </p>
+          <p class="about-text">
+            I believe great software is not just about how it works,
+            but how it's built.
+          </p>
+          <ul class="traits">
+            <li>Detail oriented</li>
+            <li>Problem solver</li>
+            <li>Minimal &amp; modern</li>
+            <li>Always learning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools">
+      <h2 class="label">Tools I Use</h2>
+      <div class="tool-grid">
+        <div class="tool reveal"><img src="images/logos/python.svg" alt="Python" /><span class="tool-name">Python</span></div>
+        <div class="tool reveal"><img src="images/logos/django.svg" alt="Django" /><span class="tool-name">Django</span></div>
+        <div class="tool reveal"><img src="images/logos/flask.svg" alt="Flask" /><span class="tool-name">Flask</span></div>
+        <div class="tool reveal"><img src="images/logos/postgresql.svg" alt="PostgreSQL" /><span class="tool-name">PostgreSQL</span></div>
+        <div class="tool reveal"><img src="images/logos/docker.svg" alt="Docker" /><span class="tool-name">Docker</span></div>
+        <div class="tool reveal"><img src="images/logos/git.svg" alt="Git / GitHub" /><span class="tool-name">Git / GitHub</span></div>
+        <div class="tool reveal"><img src="images/logos/linux.svg" alt="Linux" /><span class="tool-name">Linux</span></div>
+        <div class="tool reveal"><img src="images/logos/postman.svg" alt="Postman" /><span class="tool-name">Postman</span></div>
+      </div>
+      <p class="tools-also">Also working with: Tailwind CSS · Jinja2 · SQLite · Vercel</p>
+
+      <figure class="testimonial reveal">
+        <span class="qmark">&ldquo;</span>
+        <blockquote>
+          Aakib is a fast learner who delivers clean work on time and
+          explains his decisions clearly.
+        </blockquote>
+        <figcaption>— Project Feedback</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= CTA ======================= -->
+  <section class="cta-strip">
+    <h3>Have an idea? Let&#39;s build it.</h3>
+    <a class="btn-red" href="contact.html">Let&#39;s Talk &rarr;</a>
+  </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-foot">
+    <p>&copy; <span class="yr"></span> Aakib Patel &middot; Built from scratch</p>
+    <nav class="foot-social">
+      <a href="https://github.com/aakibpatel1112-stack" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/aakib-patel-839002418/" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/akki._x1/" rel="noopener">Instagram</a>
+    </nav>
+    <a href="#top">Back to top &uarr;</a>
+  </footer>
+</div>
+
+  <script>
+  // Reveal-on-scroll
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // ---------- Project detail modals ----------
+  function openModal(id) {
+    const m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add("open");
+    m.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(m) {
+    m.classList.remove("open");
+    m.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+  document.querySelectorAll("[data-modal]").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal(card.dataset.modal);
+    });
+  });
+  document.querySelectorAll(".modal").forEach((m) => {
+    m.querySelectorAll("[data-close]").forEach((el) =>
+      el.addEventListener("click", () => closeModal(m))
+    );
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape")
+      document.querySelectorAll(".modal.open").forEach(closeModal);
+  });
+</script>
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  // ---- Scroll progress bar ----
+  const bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  bar.innerHTML = "<span></span>";
+  document.body.appendChild(bar);
+  const fill = bar.querySelector("span");
+  const onScroll = () => {
+    const h = document.documentElement;
+    const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+    fill.style.transform = "scaleX(" + p + ")";
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // ---- Label red-bar wipe on scroll ----
+  document.querySelectorAll(".label").forEach((l) => {
+    if (!reduce) l.classList.add("label-anim");
+    const o = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { l.classList.add("visible"); o.unobserve(l); }
+    }), { threshold: 0.4 });
+    o.observe(l);
+  });
+
+  // ---- Stat counters (count-up on view) ----
+  const statsIO = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    statsIO.unobserve(e.target);
+    if (reduce) return;
+    e.target.querySelectorAll("strong").forEach((el) => {
+      const target = parseInt(el.textContent, 10);
+      if (isNaN(target)) return;
+      const t0 = performance.now(), dur = 1200;
+      const tick = (t) => {
+        const k = Math.min((t - t0) / dur, 1);
+        const ease = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(target * ease);
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }), { threshold: 0.4 });
+  document.querySelectorAll(".stats").forEach((s) => statsIO.observe(s));
+
+  if (!finePointer || reduce) return;
+
+  // ---- Cursor glow (smooth follow) ----
+  const glow = document.createElement("div");
+  glow.className = "cursor-glow";
+  document.body.appendChild(glow);
+  let mx = innerWidth / 2, my = innerHeight / 2, gx = mx, gy = my;
+  addEventListener("mousemove", (e) => {
+    mx = e.clientX; my = e.clientY;
+    glow.style.opacity = 1;
+  });
+  const loop = () => {
+    gx += (mx - gx) * 0.12;
+    gy += (my - gy) * 0.12;
+    glow.style.transform = "translate(" + gx + "px," + gy + "px)";
+    requestAnimationFrame(loop);
+  };
+  loop();
+
+  // ---- 3D tilt on project cards ----
+  document.querySelectorAll(".work").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - 0.5) * -6;
+      const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+      card.style.transform =
+        "perspective(700px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-4px)";
+    });
+    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+  });
+
+  // ---- Magnetic modal buttons ----
+  document.querySelectorAll(".btn-red, .btn-ghost").forEach((b) => {
+    b.addEventListener("mousemove", (e) => {
+      const r = b.getBoundingClientRect();
+      b.style.transform =
+        "translate(" + (e.clientX - r.left - r.width / 2) * 0.15 + "px," +
+        (e.clientY - r.top - r.height / 2) * 0.25 + "px)";
+    });
+    b.addEventListener("mouseleave", () => { b.style.transform = ""; });
+  });
+})();
+</script>
+
+<script>document.querySelectorAll(".yr").forEach(e => e.textContent = new Date().getFullYear());</script>
+</body>
+</html>
