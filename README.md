@@ -28,15 +28,6 @@ Smart agriculture monitoring system using IoT and AI to help monitor soil and cr
 ### 👓 Drishti AI
 AI-powered assistive technology designed to help visually impaired users with object detection and text recognition.
 
-### 🧠 AegisCare AI
-An experimental AI project exploring camera-based health signal analysis.
-
-## 📊 GitHub Statistics
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=aakibpatel1112-stack&show_icons=true&theme=tokyonight)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aakibpatel1112-stack&layout=compact&theme=tokyonight)
-
 ## 🤝 Connect With Me
 
 - **GitHub:** [@aakibpatel1112-stack](https://github.com/aakibpatel1112-stack)
