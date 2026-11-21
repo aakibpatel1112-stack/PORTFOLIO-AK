@@ -1,4 +1,4 @@
-# 👋 Hi, I'm Aakib Patel
+# 👋 Hi, Aakib Patel
 
 ### BCA Student | AI & IoT Developer | Full Stack Developer
 
