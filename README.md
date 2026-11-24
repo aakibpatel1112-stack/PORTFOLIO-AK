@@ -10,7 +10,7 @@ I'm passionate about building intelligent applications, AI-powered systems, IoT 
 - 💻 Interested in Full Stack Development and Artificial Intelligence
 - 🤖 Exploring AI, Machine Learning and IoT
 - 🌱 Continuously learning and building real-world projects
-- 🎯 Goal: Create technology that solves real-world problems
+- 🎯 Goal: Create technology that solves real-world problems and solve real problems
 
 ## 🛠️ Tech Stack
 
