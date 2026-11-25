@@ -28,7 +28,7 @@ Smart agriculture monitoring system using IoT and AI to help monitor soil and cr
 ### 👓 Drishti AI
 AI-powered assistive technology designed to help visually impaired users with object detection and text recognition.
 
-## 🤝 Connect With Me
+## 🤝 Connect With Me and contact me
 
 - **GitHub:** [@aakibpatel1112-stack](https://github.com/aakibpatel1112-stack)
 - **LinkedIn:** [Connect with me](https://linkedin.com/in/aakib-patel-839002418)
